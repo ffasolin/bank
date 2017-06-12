@@ -1,0 +1,22 @@
+{
+  "name": "bank",
+  "version": "1.0.0",
+  "description": "A program to model the functionality of a simple bank",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffasolin/bank.git"
+  },
+  "author": "Filipe Fasolin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ffasolin/bank/issues"
+  },
+  "homepage": "https://github.com/ffasolin/bank#readme",
+  "dependencies": {
+    "jasmine": "^2.6.0"
+  }
+}

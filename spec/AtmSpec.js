@@ -1,3 +1,6 @@
+const Atm = require('../src/Atm.js');
+const Account = require('../src/Account.js')
+
 describe('Atm', function() {
   var atm;
   var account;

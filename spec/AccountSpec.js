@@ -1,3 +1,5 @@
+const Account = require('../src/Account.js')
+
 describe('Account', function() {
   var account;
 

@@ -1,0 +1,12 @@
+{
+  "spec_dir": "spec",
+  "spec_files": [
+    "**/*[sS]pec.js"
+  ],
+  "helpers": [
+    "../../src/Account.js",
+    "../../src/Atm.js"
+  ],
+  "stopSpecOnExpectationFailure": false,
+  "random": false
+}
