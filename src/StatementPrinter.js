@@ -1,24 +1,28 @@
-function StatementPrinter() {}
+function StatementPrinter() {
+  this._transactions = [];
+}
 
 StatementPrinter.prototype.header = function() {
   console.log('date || credit || debit || balance');
 };
 
-StatementPrinter.prototype.fullStatement = function(deposits, withdrawals) {
+StatementPrinter.prototype.fullStatement = function() {
   this.header();
-  this.depositsStatement(deposits.reverse());
-  this.withdrawalsStatement(withdrawals.reverse());
+  this._transactions.reverse();
+  for (var i = 0; i < this._transactions.length; i++) {
+    console.log(this._transactions[i]);
+  }
 };
 
 StatementPrinter.prototype.depositsStatement = function(deposits) {
   for (var i = 0; i < deposits.length; i++) {
-    console.log(`${deposits[i][0]} || || ${deposits[i][1]} || ${deposits[i][2]}`)
+    this._transactions.push(`${deposits[i][0]} || || ${deposits[i][1]} || ${deposits[i][2]}`);
   }
 };
 
 StatementPrinter.prototype.withdrawalsStatement = function(withdrawals) {
   for (var i = 0; i < withdrawals.length; i++) {
-    console.log(`${withdrawals[i][0]} || ${withdrawals[i][1]} || || ${withdrawals[i][2]}`)
+    this._transactions.push(`${withdrawals[i][0]} || ${withdrawals[i][1]} || || ${withdrawals[i][2]}`);
   }
 };
 
