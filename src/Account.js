@@ -1,1 +1,3 @@
-function Account() {};
+function Account(balance = 0) {
+  this._currentBalance = balance;
+};
