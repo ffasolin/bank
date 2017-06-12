@@ -1,10 +1,12 @@
 const Atm = require('../src/Atm.js');
+const FormatDate = require('../src/FormatDate.js');
 
 describe('Atm', function() {
   var atm;
+  var date;
 
   beforeEach(function() {
-    atm = new Atm();
+    atm = new Atm;
   });
 
   it('is defined', function() {
@@ -27,6 +29,12 @@ describe('Atm', function() {
     it('makes a deposit to an account', function() {
       atm._makeDeposit(500);
       expect(atm._balance).toBe(500);
+    });
+
+    it('stores a deposit in memory', function() {
+      date = new FormatDate;
+      atm._makeDeposit(500);
+      expect(atm._deposits).toEqual([[`${date.getStyledDate()}`, '500', '500']]);
     });
   });
 
