@@ -6,4 +6,6 @@ Atm.prototype._makeDeposit = function(amount) {
   return this._balance += amount;
 }
 
+Atm.prototype._makeWithdrawal = function(amount) {}
+
 module.exports = Atm;

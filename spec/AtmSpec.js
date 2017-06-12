@@ -24,4 +24,10 @@ describe('Atm', function() {
       expect(atm._balance).toBe(500);
     });
   });
+
+  describe('_makeWithdrawal', function() {
+    it('has a _makeWithdrawal prototype defined', function() {
+      expect(atm._makeWithdrawal).toBeDefined();
+    });
+  });
 });
