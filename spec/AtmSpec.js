@@ -1,9 +1,7 @@
 const Atm = require('../src/Atm.js');
-const Account = require('../src/Account.js')
 
 describe('Atm', function() {
   var atm;
-  var account;
 
   beforeEach(function() {
     atm = new Atm();
@@ -19,7 +17,6 @@ describe('Atm', function() {
     });
 
     it('makes a deposit to an account', function() {
-      account = new Account;
       atm._makeDeposit(500);
       expect(atm._balance).toBe(500);
     });
@@ -31,7 +28,6 @@ describe('Atm', function() {
     });
 
     it('withdraws money from account', function() {
-      account = new Account;
       atm._makeWithdrawal(500);
       expect(atm._balance).toBe(-500);
     });
