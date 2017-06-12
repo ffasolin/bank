@@ -1,5 +1,6 @@
 function Atm(balance = 0) {
   this._balance = balance;
+  this._deposits = [];
 }
 
 Atm.prototype._makeDeposit = function(amount) {
