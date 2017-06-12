@@ -15,6 +15,10 @@ describe('Atm', function() {
     expect(atm._deposits).toEqual([]);
   });
 
+  it('has a withdrawal storage', function() {
+    expect(atm._withdrawals).toEqual([]);
+  });
+
   describe('_makeDeposit', function() {
     it('has a _makeDeposit prototype defined', function() {
       expect(atm._makeDeposit).toBeDefined();
