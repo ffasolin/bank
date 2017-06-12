@@ -13,7 +13,8 @@ Atm.prototype._makeDeposit = function(amount) {
 }
 
 Atm.prototype._makeWithdrawal = function(amount) {
-  return this._balance -= amount;
+  this._balance -= amount;
+  return this._withdrawals.push([`${date.getStyledDate()}`, `${amount}`, `${this._balance}`]);
 }
 
 module.exports = Atm;

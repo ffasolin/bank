@@ -47,5 +47,11 @@ describe('Atm', function() {
       atm._makeWithdrawal(500);
       expect(atm._balance).toBe(-500);
     });
+
+    it('stores a deposit in memory', function() {
+      date = new FormatDate;
+      atm._makeWithdrawal(500);
+      expect(atm._withdrawals).toEqual([[`${date.getStyledDate()}`, '500', '-500']]);
+    });
   });
 });
