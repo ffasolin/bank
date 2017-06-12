@@ -29,5 +29,11 @@ describe('Atm', function() {
     it('has a _makeWithdrawal prototype defined', function() {
       expect(atm._makeWithdrawal).toBeDefined();
     });
+
+    it('withdraws money from account', function() {
+      account = new Account;
+      atm._makeWithdrawal(500);
+      expect(atm._balance).toBe(-500);
+    });
   });
 });
