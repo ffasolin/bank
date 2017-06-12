@@ -13,13 +13,15 @@ describe('Atm', function() {
     expect(atm).toBeDefined();
   });
 
-  it('has a _makeDeposit prototype defined', function() {
-    expect(atm._makeDeposit).toBeDefined();
-  });
+  describe('_makeDeposit', function() {
+    it('has a _makeDeposit prototype defined', function() {
+      expect(atm._makeDeposit).toBeDefined();
+    });
 
-  it('makes a deposit to an account', function() {
-    account = new Account;
-    atm._makeDeposit(500);
-    expect(atm._balance).toBe(500);
+    it('makes a deposit to an account', function() {
+      account = new Account;
+      atm._makeDeposit(500);
+      expect(atm._balance).toBe(500);
+    });
   });
 });
