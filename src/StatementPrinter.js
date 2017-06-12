@@ -1,12 +1,13 @@
 function StatementPrinter() {}
 
 StatementPrinter.prototype.header = function() {
-  return 'date || credit || debit || balance';
+  console.log('date || credit || debit || balance');
 };
 
 StatementPrinter.prototype.fullStatement = function(deposits, withdrawals) {
-  this.depositsStatement(deposits);
-  this.withdrawalsStatement(withdrawals);
+  this.header();
+  this.depositsStatement(deposits.reverse());
+  this.withdrawalsStatement(withdrawals.reverse());
 };
 
 StatementPrinter.prototype.depositsStatement = function(deposits) {

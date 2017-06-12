@@ -11,7 +11,9 @@ describe('StatementPrinter', function() {
 
   it('returns a header', function() {
     receipt = new StatementPrinter;
-    expect(receipt.header()).toBe('date || credit || debit || balance');
+    console.log = jasmine.createSpy("log");
+    receipt.header();
+    expect(console.log).toHaveBeenCalledWith('date || credit || debit || balance');
   });
 
   it('prints full current statement', function() {
@@ -20,8 +22,9 @@ describe('StatementPrinter', function() {
     atm._makeDeposit(1000);
     atm._makeDeposit(2000);
     atm._makeWithdrawal(500);
-    console.log = jasmine.createSpy("log");
+    console.log = jasmine.createSpy('log');
     receipt.fullStatement(atm._deposits, atm._withdrawals);
+    expect(console.log).toHaveBeenCalledWith('date || credit || debit || balance');
     expect(console.log).toHaveBeenCalledWith('12/06/2017 || || 1000 || 1000');
     expect(console.log).toHaveBeenCalledWith('12/06/2017 || || 2000 || 3000');
     expect(console.log).toHaveBeenCalledWith('12/06/2017 || 500 || || 2500');
